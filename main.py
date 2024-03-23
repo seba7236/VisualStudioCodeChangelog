@@ -43,9 +43,9 @@ def main(source, destination):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
                         prog="VSCode History Parser",
-                        description="Parses the different versions of files in VSCode, for use with KAPE")
-    parser.add_argument('-s','--src')
-    parser.add_argument('-d','--dst')
+                        description="Parses the different versions of files in VSCode, for use with KAPE", epilog="Outputs a CSV file for each file that was worked on in VSCode")
+    parser.add_argument('-s','--src', help="Source directory. Must be C:\\Users\\user\\AppData\\Roaming\\Code\\User\\History")
+    parser.add_argument('-d','--dst', help="Output directory, where the CSV files are output")
 
     args = parser.parse_args()
     main(args.src, args.dst)
